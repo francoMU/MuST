@@ -23,8 +23,7 @@ LIBXC_PATH  =
 FFTW_PATH   = /home/fmoitzi/Software/fftw
 P3DFFT_PATH =
 LUA_PATH    =
-LIBS       += -L$(MATH_PATH) -lmkl_scalapack_lp64 \
--Wl,--start-group -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lmkl_blacs_openmpi_lp64 -Wl,--end-group -lpthread -lm -ldl
+LIBS       += -L/usr/lib/x86_64-linux-gnu -lblas -llapack -lscalapack-openmpi
 ADD_LIBS   += -lgfortran
 
 #=====================================================================
@@ -49,10 +48,10 @@ FPPFLAGS    = -DMPI -DMaxOutProcs=1 -DUSE_SCALAPACK
 CPPFLAGS    = 
 
 TUNE_FLAGS  = -mtune=skylake -march=skylake
-CFLAGS      = -O2 $(TUNE_FLAGS) -Wall
-CXXFLAGS    = -O2 -std=c++14 $(TUNE_FLAGS) -Wall
-FFLAGS      = -O2 $(TUNE_FLAGS) -Wall
-F77FLAGS    = -O2 $(TUNE_FLAGS) -Wall -std=legacy
+CFLAGS      = -O1 $(TUNE_FLAGS) -Wall -g
+CXXFLAGS    = -O1 -std=c++14 $(TUNE_FLAGS) -Wall -g
+FFLAGS      = -O1 $(TUNE_FLAGS) -Wall -fbacktrace -g
+F77FLAGS    = -O1 $(TUNE_FLAGS) -Wall -std=legacy -fbacktrace -g
 OPT_OPENMP  = -fopenmp
 
 LD_FLAGS    =

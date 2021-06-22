@@ -136,6 +136,6 @@ Mixing quantity type       ::  1
      0. Charge mixing      ---------
      1. Potential mixing   ---------
 Default Mixing Parameter   ::  0.1000
-Energy (Ryd) Tol (> 0)     ::  0.000005
-Potential Tol (> 0)        ::  0.0000001
+Energy (Ryd) Tol (> 0)     ::  0.0000001
+Potential Tol (> 0)        ::  0.00000001
 ================================================================================
